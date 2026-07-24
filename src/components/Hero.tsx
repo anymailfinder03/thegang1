@@ -204,7 +204,7 @@ export default function Hero() {
             className="mb-2 h-[3px] w-12 rounded-full"
             style={{ background: active.accent, transition: `background-color ${DURATION}ms ${EASING}` }}
           />
-          <h3 className="font-gochi text-3xl sm:text-5xl md:text-6xl leading-none text-white tracking-wide">
+          <h3 className="font-gochi text-4xl sm:text-6xl md:text-7xl leading-none text-white tracking-wide">
             {active.name}
           </h3>
           <p className="mt-2 font-gochi text-sm sm:text-base text-white/85 italic">
