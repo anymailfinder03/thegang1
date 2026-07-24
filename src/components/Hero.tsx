@@ -198,7 +198,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom left: character info */}
-      <div className="absolute bottom-16 left-6 sm:bottom-14 sm:left-10 z-50 max-w-[55vw] sm:max-w-xs md:max-w-sm">
+      <div className="absolute bottom-16 left-6 sm:bottom-14 sm:left-10 z-50 max-w-[55vw] sm:max-w-lg md:max-w-xl">
         <div key={activeIndex} className="animate-text-in">
           <div
             className="mb-2 h-[3px] w-12 rounded-full"
