@@ -2,63 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
-  height: 100%;
   margin: 0;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gochi Hand', cursive;
   background: #0a0a0a;
-  overflow: hidden;
 }
 
+/* ── Floating animation (hero character) ── */
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
 }
-
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
 
+/* ── Slide-in text ── */
 @keyframes textIn {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 .animate-text-in {
   animation: textIn 650ms cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
-@keyframes ghostIn {
-  from {
-    opacity: 0;
-    transform: scale(1.04);
-  }
-  to {
-    opacity: var(--ghost-opacity, 0.14);
-    transform: scale(1);
-  }
+/* ── Infinite marquee ticker ── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 22s linear infinite;
+  display: inline-flex;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
 }
 
-.animate-ghost-in {
-  animation: ghostIn 650ms cubic-bezier(0.4, 0, 0.2, 1) both;
-}
-
+/* ── Grain overlay ── */
 .grain-overlay {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Subtle pulse on active phase dot ── */
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 currentColor; }
+  50%       { box-shadow: 0 0 0 8px transparent; }
+}
+
+/* ── Card bg utility not in Tailwind 3 ── */
+.bg-white\/8 {
+  background-color: rgb(255 255 255 / 0.08);
 }

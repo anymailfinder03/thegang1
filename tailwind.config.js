@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        anton: ['Anton', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        gochi: ['"Gochi Hand"', 'cursive'],
       },
     },
   },
