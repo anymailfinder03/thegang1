@@ -207,7 +207,7 @@ export default function Hero() {
           <h3 className="font-gochi text-4xl sm:text-6xl md:text-7xl leading-none text-white tracking-wide">
             {active.name}
           </h3>
-          <p className="mt-2 font-gochi text-3g sm:text-x3 text-white/85 italic">
+          <p className="mt-2 font-gochi text-5g sm:text-x5 text-white/85 italic">
             "{active.quote}"
           </p>
           <p className="mt-1 font-gochi text-xs sm:text-sm text-white/65 leading-relaxed hidden sm:block">
